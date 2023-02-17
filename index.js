@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const routerApi = require('./routes');
+require('dotenv');
 const {
   errorHandler,
   logErrors,
@@ -34,7 +35,7 @@ app.use(logErrors);
 app.use(boomErrorHandler);
 app.use(errorHandler);
 
-const port = 80;
+const port = process.env.PORT;
 
 app.listen(port, () => {
   console.log(`server is running ${port}`);
