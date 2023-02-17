@@ -34,7 +34,7 @@ app.use(logErrors);
 app.use(boomErrorHandler);
 app.use(errorHandler);
 
-const port = 3001;
+const port = 80;
 
 app.listen(port, () => {
   console.log(`server is running ${port}`);
