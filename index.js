@@ -13,17 +13,17 @@ const app = express();
 // PARA PODER OBTENER EL BODY EN JSON
 app.use(express.json());
 
-const whitelist = ['http://localhost:3000', 'http://localhost:5173'];
-const options = {
-  origin: (origin, callback) => {
-    if (whitelist.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('no permitido'));
-    }
-  },
-};
-app.use(cors(options));
+// const whitelist = ['http://localhost:3000', 'http://localhost:5173'];
+// const options = {
+//   origin: (origin, callback) => {
+//     if (whitelist.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('no permitido'));
+//     }
+//   },
+// };
+app.use(cors());
 routerApi(app);
 
 app.get('/', (req, res) => {
