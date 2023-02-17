@@ -38,7 +38,7 @@ app.use(logErrors);
 app.use(boomErrorHandler);
 app.use(errorHandler);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3001;
 
 app.listen(port, () => {
   console.log(`server is running ${port}`);
