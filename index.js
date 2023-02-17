@@ -1,7 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const routerApi = require('./routes');
+const bodyParse = require("body-parse")
 require('dotenv');
+
+app.use(bodyParse.urlencoded({extends: true}))
 const {
   errorHandler,
   logErrors,
